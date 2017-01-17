@@ -1,11 +1,11 @@
 import { expect } from 'chai';
 import { mount } from 'avoriaz'
 
-import Child from '../src/Child.vue';
+import Foo from '../src/components/Foo.vue';
 
-describe('Child', () => {
+describe('Foo', () => {
   it('toggles class active when clicked', () => {
-    const wrapper = mount(Child);
+    const wrapper = mount(Foo);
 
     expect(wrapper.hasClass('active')).to.equal(false);
 
@@ -15,16 +15,14 @@ describe('Child', () => {
   });
 
   it('renders a p tag with id text', () => {
-    const wrapper = mount(Child);
+    const wrapper = mount(Foo);
     const p = wrapper.find('p')[0];
     expect(p.is('#text')).to.equal(true);
   });
 
   it('renders a p tag that includes text "Some text"', () => {
-    const wrapper = mount(Child);
+    const wrapper = mount(Foo);
     const p = wrapper.find('p')[0];
-    console.log(p);
-    console.log(p.element.innerText());
     expect(p.text()).to.equal('Some text');
   })
 });
