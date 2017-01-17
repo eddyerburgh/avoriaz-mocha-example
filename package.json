@@ -4,8 +4,7 @@
   "description": "example project using avoriaz with mocha-webpack to test Vue.js components",
   "main": ".eslintrc.js",
   "scripts": {
-    "lint": "eslint src --ext .js,.vue",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "eslint src --ext .js,.vue -- --fix",
     "test": "mocha-webpack --webpack-config webpack.config.js test --recursive --require test/.setup.js"
   },
   "author": "Edd Yerburgh",
