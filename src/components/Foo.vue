@@ -1,24 +1,30 @@
 <template>
-	<div id="child"
-	     @click='toggleActive'
-	     v-bind:class="{ active: isActive }"
-	>
-		<p id="text">Some text</p>
+	<div class="foo">
+		<h1>{{ msg }}</h1>
+		<button id="change-message" @click="changeMessage">Change message</button>
+		<p>{{ msg2 }}</p>
+		<bar />
 	</div>
 </template>
+
 <script>
+import Bar from './Bar.vue';
+
 export default {
-  name: 'app',
-  props: ['clickHandler'],
-  data: function() {
+  name: 'hello',
+  data() {
     return {
-	   isActive: false,
-		}
-	},
-	methods: {
-		toggleActive: function() {
-			this.isActive = !this.isActive;
-		}
-	}
+      msg: 'Welcome to Your Vue.js App',
+    };
+  },
+  props: ['msg2'],
+  methods: {
+    changeMessage() {
+      this.msg = 'new message';
+    },
+  },
+  components: {
+    Bar,
+  },
 };
 </script>
