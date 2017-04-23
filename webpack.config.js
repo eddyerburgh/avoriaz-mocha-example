@@ -1,6 +1,6 @@
-const path = require('path');
+const path = require('path')
 
-const projectRoot = path.resolve(__dirname, '../../../');
+const projectRoot = path.resolve(__dirname, '../../../')
 
 module.exports = {
   // use inline sourcemap for karma-sourcemap-loader
@@ -29,4 +29,4 @@ module.exports = {
     }
   },
   devtool: '#inline-source-map'
-};
+}
