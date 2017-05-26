@@ -1,32 +1,26 @@
 const path = require('path')
-
-const projectRoot = path.resolve(__dirname, '../../../')
+var nodeExternals = require('webpack-node-externals')
 
 module.exports = {
-  // use inline sourcemap for karma-sourcemap-loader
   module: {
-    resolve: {
-      extensions: ['.js', '.vue']
-    },
-    loaders: [
+    rules: [
       {
         test: /\.vue$/,
-        loader: 'vue'
+        loader: 'vue-loader',
       },
       {
         test: /\.js$/,
-        loader: 'babel',
-        include: [
-          projectRoot
-        ],
+        loader: 'babel-loader',
         exclude: /node_modules/
       }
     ]
   },
-  vue: {
-    loaders: {
-      js: 'babel'
+  target: 'node',
+  externals: [nodeExternals()],
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
     }
   },
-  devtool: '#inline-source-map'
+  devtool: '#eval-source-map'
 }
