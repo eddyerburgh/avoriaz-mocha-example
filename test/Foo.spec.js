@@ -20,7 +20,7 @@ describe('Foo.vue', () => {
 
     const wrapper = mount(Foo)
     const button = wrapper.find('#change-message')[0]
-    button.simulate('click')
+    button.dispatch('click')
 
     expect(wrapper.find('h1')[0].text()).to.equal(expectedMessage)
   })
