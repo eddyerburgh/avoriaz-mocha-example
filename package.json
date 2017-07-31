@@ -5,7 +5,7 @@
   "main": ".eslintrc.js",
   "scripts": {
     "lint:fix": "standard --env mocha --fix",
-    "test": "mocha-webpack --webpack-config webpack.config.js test --recursive --require test/.setup.js"
+    "test": "mocha-webpack --webpack-config build/webpack.config.js test --recursive --require test/.setup.js"
   },
   "author": "Edd Yerburgh",
   "license": "MIT",
