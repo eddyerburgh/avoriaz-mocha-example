@@ -15,7 +15,6 @@ module.exports = {
       }
     ]
   },
-  target: 'node',
   externals: [nodeExternals()],
   resolve: {
     alias: {
